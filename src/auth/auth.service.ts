@@ -43,7 +43,7 @@ export class AuthService {
     const userId = decodedRefreshToken.id;
     const user = await this.userService.getUserIfRefreshTokenMatches(refresh_token, userId);
     if (!user) {
-      throw new UnauthorizedException('Invalid user!')
+      throw new UnauthorizedException('Invalid user!');
     }
 
     // Generate new access token
